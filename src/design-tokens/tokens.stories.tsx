@@ -7,7 +7,12 @@ export default {
   },
 }
 
-const ColorPalette = ({ colors, title }) => (
+interface ColorPaletteProps {
+  colors: Record<string, string>
+  title: string
+}
+
+const ColorPalette = ({ colors, title }: ColorPaletteProps) => (
   <div className="mb-8">
     <h3 className="text-lg font-semibold mb-4">{title}</h3>
     <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
@@ -15,7 +20,7 @@ const ColorPalette = ({ colors, title }) => (
         <div key={shade} className="space-y-2">
           <div
             className="h-16 w-full rounded-md border border-gray-200"
-            style={{ backgroundColor: value }}
+            style={{ backgroundColor: value as string }}
           />
           <div className="text-sm">
             <div className="font-medium">{shade}</div>
