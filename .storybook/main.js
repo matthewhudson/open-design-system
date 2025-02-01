@@ -6,6 +6,8 @@ const config = {
     "../src/design-tokens/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
   addons: [
+    "@storybook/addon-actions",
+    "@storybook/addon-links",
     "@storybook/addon-onboarding",
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
