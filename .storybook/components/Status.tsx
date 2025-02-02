@@ -1,7 +1,7 @@
 import React from "react"
 import type { ReactNode } from "react"
 import { Unstyled } from "@storybook/blocks"
-//import LinkTo from "@storybook/addon-links/react"
+import LinkTo from "@storybook/addon-links/react"
 
 type Variant =
   | "neutral"
@@ -47,22 +47,18 @@ export function Status({
 
   return (
     <>
-      <div {...props}>
-        {label}
-        {children}
-      </div>
-      {/** 
-    <Unstyled {...props}>
-      <LinkTo {...props} kind={kind} name={name}>
-        <Badge variant={variant}>{label}</Badge>
-      </LinkTo>
-      {children && (
+      <Unstyled {...props}>
+        <LinkTo {...props} kind={kind} name={name}>
+          {/**  <Badge variant={variant}>{label}</Badge>*/}
+          {label}
+          {children}
+        </LinkTo>
+        {/**  {children && (
         <Body size="s" as="span" className={classes.description} color="subtle">
           {children}
         </Body>
-      )}
-    </Unstyled>
-    */}
+      )}*/}
+      </Unstyled>
     </>
   )
 }

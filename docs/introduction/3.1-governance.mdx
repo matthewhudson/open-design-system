@@ -1,0 +1,221 @@
+import { Meta, Status, Intro, Props } from '../../.storybook/components';
+
+<Meta title="Introduction/Governance/Governance Process" />
+
+# Design System Governance Process
+
+<Intro>
+A design system is a living product, evolving alongside the organization it serves. At Star Tribune, our design system provides structured components, comprehensive documentation, and a unified design language to empower product teams. This guide outlines the governance process for creating, approving, and deploying components while balancing urgency ("shipping") with system integrity.
+</Intro>
+
+### Philosophy
+
+- **Collaboration over Gatekeeping**: Engineers, designers, and product managers share ownership of the system’s health.
+- **Flexibility with Accountability**: Teams may deviate from the system to meet deadlines, but all deviations ("snowflakes") must be tracked and reviewed for potential integration.
+- **Iterative Improvement**: We embrace retrospection to refine components over time.
+
+## How to use the Design System
+
+1. **Check Storybook**:
+    Teams should browse Storybook and default to using the design system by to help create new product work. The best case scenario is that a team comes to the library, finds the component they need and finds that it fulfills all their requirements. They plug in the component and carry on with more pressing matters. Hooray for best case scenarios!
+
+    Questions? Concerns? Don’t see what you need, continue to step 2.
+2. **Talk**:
+    If the team comes to the design system and doesn’t find the component they need, if an existing component doesn’t fulfill all the requirements, or if they’re just not sure if the system has what they need, the first step is to reach out to Design System Lead (Carla Fabian). The design system team via Slack, issue trackers (Github, Jira, etc), or other channel (@TODO: the design system team should establish clear support protocol). The teams will have a conversation to better understand the issue, and then determine whether or not new work needs to happen. Often the design system team can help guide the product team to an existing solution that meets the requirements. Hooray for conversation!
+
+    If the teams determine the work is part of the design system, the work will be added to the design system backlog capturing the work to be done.
+3. **Design & Build**:
+    Product, Design, and Engineering will get to work, building the new component. For design, this may take the form of a wireframe, napkin sketch, comp, in-browser prototype, or any other artifact that quickly and clearly articulates the use case and defines the work to be done. For engineering, this may include proof-of-concepts, discovery spikes, or other vetting. Both Design and Engineering will deliver output for stakeholder approval.
+4. **Review & Release**:
+    Product, Design, and Engineering will regroup with stakeholders to review their work and determine whether that work meets all requirements. If things are missing, the teams will iterate over the concept and continue reviewing until the requirements are met and the new component is released to the design system.
+5. **Adopt**:
+    The new component is now ready to be integrated into the website itself.
+
+---
+
+## 1. Ideation Phase  
+
+*Define the problem, scope requirements, and validate alignment with system goals.*  
+
+ If the teams agree that new work needs to happen, the first thing that needs sorted is whether or not the the work is:
+
+   1. **A “snowflake”**, which is a one-off component that only really pertains to one specific product or use case (such as a news design team project, a super intricate and specific data visualization, or any component that feels especially challenging to abstract into a general-use component)
+   2. **Part of the design system**, which is a component or variation that is part of library that serves all products (such as adding a breadcrumbs component or perhaps adding an “x” button to a card component in order to make it dismissable)
+ If the teams decide the work is a snowflake, the work will be added to the specific product team’s backlog in accordance with the design system’s snowflake guidelines (@TODO: the design system team should establish guidelines for managing snowflakes to be able to track components and make refactoring into the design system easier down the road).
+
+### **Stakeholders**  
+
+- **Product:** Drive initial requirements based on user/business needs.
+- **Design:** Propose solutions aligned with the design system’s principles.  
+- **Engineering (Advisory Role):** Provide early feasibility feedback.  
+
+### **Activities**  
+
+- Define use cases, user stories, and edge cases.
+- Conduct audits to avoid duplicating existing components.  
+- Review system capabilities (e.g., existing tokens, Tailwind configurations).  
+
+### **Outputs**  
+
+- Component brief (problem statement, use cases, constraints).  
+
+### **Key Considerations**  
+
+- Product/Design must understand the system’s exposed features (e.g., tokens, atomic design responsive patterns).
+- Ideally, PMs/Designers are generally aware of the publishing workflow as a whole and the overall system's architecture **before** involving engineers.  
+- Use system documentation to self-serve answers (e.g., “Can this be built with existing tokens?”).  
+
+---
+
+## 2. Design Phase  
+
+*Create Figma prototypes a using atomic design principles and design tokens.*  
+
+### **Stakeholders**  
+
+- **Designers:** Build in Figma, adhering to established Atomic Design Principles: Atoms → Molecules → Organisms → Templates → Pages.  
+- **Engineers (Review):** Validate technical feasibility.  
+
+### **Activities**  
+
+- Design component variants/states in Figma.  
+- Apply existing design tokens (color, spacing, typography).  
+- Document interaction states (hover, focus, loading).  
+
+### **Outputs**  
+
+- Figma file with component specs, tokens, and responsive breakpoints.  
+
+### **Key Considerations**  
+
+- Designers must use **existing tokens** unless a net-new token is justified.  
+- Engineers review for feasibility (e.g., “Can Tailwind implement this animation?”).  
+
+---
+
+## 3. Approval Phase  
+
+*Cross-functional review to ensure alignment and readiness.*  
+
+### **Stakeholders**  
+
+- **Design:** Finalize aesthetics and token usage.  
+- **Engineering:** Confirm technical viability.  
+- **Product:** Validate final design against requirements and create ticket(s) capturing all requirements necessary for development.  
+
+### **Activities**  
+
+- Review designs and engineering plans for final stakeholder approval and sign-off.
+
+### **Outputs**  
+
+- Signed-off Figma design.  
+- Jira ticket for implementation.  
+
+### **Key Considerations**  
+
+- Reject designs that ignore system standards without justification.  
+
+---
+
+## 4. Build Phase  
+
+*Develop the component in React, document in Storybook, and test.*  
+
+### **Stakeholders**  
+
+- **Product:** Ensure refined ticket meets engineering R
+- **Engineers:** Build with React, Tailwind, Storybook stories, Jest tests, and when necessasry possibly other tests such as Cypress E2E when appropriate.
+- **Designers:** Confirm implementation matches Figma.  
+
+### **Activities**  
+
+- Map Figma tokens to Tailwind classes (manually until style-dictionary is adopted).  
+- Build component with props for variants/states.  
+- Write unit tests (e.g., Jest).  
+-
+
+### **Outputs**  
+
+- React component code.  
+- Storybook documentation with usage examples.  
+
+### **Key Considerations**  
+
+- Engineers and designers collaborate to resolve discrepancies (e.g., “Figma uses `spacing-4`, but Tailwind uses `p-4`”).  
+
+---
+
+## 5. Review & Testing Phase  
+
+*Finalize docs and validate quality.*  
+
+### **Stakeholders**  
+
+- **Engineers:** Write technical docs.  
+- **Technical Writers:** Ensure clarity for consumers.  
+- **QA:** Validate functionality and a11y.  
+
+### **Activities**  
+
+When the component is built, testing will ensue across the following areas:
+
+- **Documentation** - do Storybook docs exist: props, examples, and “do’s/don’ts”.  
+- **Content** – can this component or variation handle a variety of content situations (such as lengthy or internationalized text)?
+- **Accessibility** – does this component meet or exceed accessibility requirements and follow accessibility guidelines?
+- **Cross-browser/device** – test across supported browsers and devices
+- **Responsive** – test across the entire resolution spectrum to ensure proper display on any screen size
+- **Functionality** – unit testing for functionality
+- **Create stress test examples** in the workshop to capture common, edge, and stress scenarios
+- **Internal code review** – ensure component code meets atomic design principles, design system coding standards
+- **Internal design review** – ensure work adheres to atomic design principles, the design language and meets all design requirements
+- **Any other internal QA and testing**
+
+### **Outputs**  
+
+- Merged PR with tests passing.  
+
+### **Key Considerations**  
+
+- Treat documentation as a **living resource**—update as the component evolves.  
+
+---
+
+## 6. Release Phase  
+
+*Release to production and monitor.*  
+
+### **Stakeholders**  
+
+- **DevOps:** Manage CI/CD pipeline.  
+- **PMs/Designers:** Announce availability to product teams.  
+
+### **Activities**  
+
+- Merge to main branch.  
+- Update design system version and changelog.  
+
+### **Outputs**  
+
+- Component available for reference in production Storybook.  
+- Component available for adoption in production codebase.  
+- Release notes communicated via Slack/email.  
+
+### **Key Considerations**  
+
+- Monitor usage and errors (e.g., via Datadog?, Vercel?).  
+
+---
+
+## 7. Post-Launch Review  
+
+*Gather feedback and iterate.*  
+
+### **Stakeholders**  
+
+- **All Teams:** Report issues or enhancement requests.  
+
+### **Activities**  
+
+- Track adoption metrics.  
+- Schedule retrospectives for complex components.
