@@ -1,3 +1,4 @@
+import React from "react"
 import type { AnchorHTMLAttributes } from "react"
 import LinkTo from "@storybook/addon-links/react"
 

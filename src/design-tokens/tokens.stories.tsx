@@ -1,7 +1,7 @@
 import React from "react"
 
 export default {
-  title: "Design Tokens",
+  title: "Design Tokens/Colors",
   parameters: {
     layout: "padded",
   },

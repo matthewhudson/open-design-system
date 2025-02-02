@@ -6,6 +6,7 @@ import classNames from "classnames"
 export default {
   title: "Components/Accordion",
   component: Accordion.Root,
+  tags: ["status:under-review"],
   parameters: {
     layout: "padded",
   },

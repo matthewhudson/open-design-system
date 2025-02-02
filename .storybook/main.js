@@ -1,5 +1,6 @@
 /** @type { import('@storybook/nextjs').StorybookConfig } */
 const config = {
+  staticDirs: ["../public"],
   stories: [
     "../docs/*.@(md|mdx)",
     "../docs/**/*.@(md|mdx)",
@@ -12,35 +13,25 @@ const config = {
     "@storybook/addon-links",
     "@storybook/addon-onboarding",
     "@storybook/addon-essentials",
-    "@chromatic-com/storybook",
     "@storybook/addon-interactions",
   ],
   framework: {
     name: "@storybook/nextjs",
     options: {},
   },
-  staticDirs: ["../public"],
-  webpackFinal: async (config) => {
-    if (config.module && config.module.rules) {
-      const cssRule = config.module.rules.find(
-        (rule) => rule.test && rule.test.test(".css")
-      )
-      if (cssRule) {
-        cssRule.use = [
-          "style-loader",
-          "css-loader",
-          {
-            loader: "postcss-loader",
-            options: {
-              postcssOptions: {
-                plugins: ["tailwindcss" /*, "autoprefixer"*/],
-              },
-            },
-          },
-        ]
-      }
-    }
-    return config
+  core: {
+    disableTelemetry: true,
+  },
+  // async viteFinal(config) {
+  //   return mergeConfig(config, {
+  //     define: {
+  //       "process.env.UNSAFE_DISABLE_ELEMENT_ERRORS": false,
+  //     },
+  //   })
+  // },
+  typescript: {
+    reactDocgen: "react-docgen-typescript",
   },
 }
+
 export default config

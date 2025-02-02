@@ -1,0 +1,15 @@
+
+<svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    circle {
+      fill: #0e0e0e;
+    }
+    @media (prefers-color-scheme: dark) {
+      circle {
+        fill: #0e0e0e;
+        fill: #007826; /* cheating for now */
+      }
+    }
+  </style>
+  <circle cx="25" cy="25" r="25" />
+</svg>
