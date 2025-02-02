@@ -1,6 +1,7 @@
 /** @type { import('@storybook/nextjs').StorybookConfig } */
 const config = {
   staticDirs: ["../public"],
+
   stories: [
     "../docs/*.@(md|mdx)",
     "../docs/**/*.@(md|mdx)",
@@ -8,20 +9,25 @@ const config = {
     "../src/components/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     "../src/design-tokens/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
+
   addons: [
     "@storybook/addon-actions",
     "@storybook/addon-links",
     "@storybook/addon-onboarding",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
+    "@storybook/addon-mdx-gfm",
   ],
+
   framework: {
     name: "@storybook/nextjs",
     options: {},
   },
+
   core: {
     disableTelemetry: true,
   },
+
   // async viteFinal(config) {
   //   return mergeConfig(config, {
   //     define: {
@@ -32,6 +38,10 @@ const config = {
   typescript: {
     reactDocgen: "react-docgen-typescript",
   },
+
+  // docs: {
+  //   autodocs: true
+  // }
 }
 
 export default config

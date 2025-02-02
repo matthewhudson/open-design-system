@@ -1,0 +1,60 @@
+/**
+ * Our global resets
+ */
+
+/**
+ * Best practice from http://callmenick.com/post/the-new-box-sizing-reset
+ * TL;DR: It’s easier to override and a slight performance boost.
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* `clip` has the same visual effect as `hidden`, but doesn't interfere with `position: sticky` on child elements */
+@supports (overflow-x: clip) {
+  html {
+    overflow-x: clip;
+  }
+}
+
+[type="button"] {
+  appearance: none;
+}
+
+body {
+  font-size: var(--cui-body-m-font-size);
+  line-height: var(--cui-body-m-line-height);
+  color: var(--cui-fg-normal);
+  background-color: var(--cui-bg-normal);
+}
+
+/**
+ * Form elements don't inherit font settings.
+ * https://stackoverflow.com/questions/26140050/ why-is-font-family-not-inherited-in-button-tags-automatically
+ */
+html,
+body,
+input,
+select,
+optgroup,
+textarea,
+button {
+  font-family: var(--cui-font-stack-default);
+  font-weight: var(--cui-font-weight-regular);
+  font-feature-settings: "kern";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+pre,
+code {
+  font-family: var(--cui-font-stack-mono);
+}

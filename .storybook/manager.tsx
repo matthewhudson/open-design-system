@@ -1,5 +1,5 @@
 import React from "react"
-//import "@sumup-oss/design-tokens/dynamic.css"
+import "@sumup-oss/design-tokens/dynamic.css"
 
 import type { CSSProperties } from "react"
 import { addons, types } from "@storybook/manager-api"
@@ -83,7 +83,7 @@ addons.setConfig({
       },
     },
     renderLabel(item) {
-      console.log(item)
+      // console.log(item)
       if (item.type !== "story") {
         return item.name
       }

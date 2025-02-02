@@ -8,16 +8,16 @@ import {
 
 export { Props, Meta, Title, Subheading, Subtitle }
 
-//export { DocsContainer } from "./DocsContainer.js"
+export { DocsContainer } from "./DocsContainer"
 export { Status } from "./Status"
 // export { Preview } from "./Preview.js"
 // export { Story } from "./Story.js"
 // export { Icons } from "./Icons.js"
 export { Intro } from "./Intro"
-// export { Teaser } from "./Teaser.js"
-// export { Link } from "./Link.js"
+export { Teaser } from "./Teaser"
+export { Link } from "./Link"
 // export { Image } from "./Image.js"
-// export { Stack } from "./Stack.js"
+export { Stack } from "./Stack"
 // export { FullViewport } from "./FullViewport.js"
 
 /*
@@ -34,5 +34,5 @@ export {
   Typography,
   Transition,
   MediaQueriesTable,
-} from './Theme.js';
+} from './Theme';
  */
