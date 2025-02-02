@@ -1,6 +1,8 @@
 /** @type { import('@storybook/nextjs').StorybookConfig } */
 const config = {
   stories: [
+    "../docs/*.@(md|mdx)",
+    "../docs/**/*.@(md|mdx)",
     //"../src/components/**/*.mdx",
     "../src/components/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     "../src/design-tokens/*.stories.@(js|jsx|mjs|ts|tsx)",
@@ -31,7 +33,7 @@ const config = {
             loader: "postcss-loader",
             options: {
               postcssOptions: {
-                plugins: ["tailwindcss", "autoprefixer"],
+                plugins: ["tailwindcss" /*, "autoprefixer"*/],
               },
             },
           },
