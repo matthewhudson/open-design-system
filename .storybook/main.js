@@ -1,7 +1,9 @@
-import path from "node:path"
+import type { StorybookConfig } from "@storybook/react-vite"
 
-/** @type { import('@storybook/nextjs').StorybookConfig } */
-const config = {
+import path from "node:path"
+import { mergeConfig } from "vite"
+
+const config: StorybookConfig = {
   staticDirs: [path.join(process.cwd(), ".storybook/public")],
 
   stories: [
