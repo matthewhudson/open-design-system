@@ -48,7 +48,16 @@ export const parameters = {
   controls: { expanded: true },
   options: {
     storySort: {
-      order: ["Introduction", "Design Tokens", "Components"],
+      order: [
+        "Introduction",
+        "Design Tokens",
+        "Components",
+        // "Atom Components",
+        // "Molecule Components",
+        // "Organism Components",
+        // "Template Components",
+        // "Page Components",
+      ],
       includeName: true,
     },
   },
@@ -56,7 +65,7 @@ export const parameters = {
     theme: light,
     components,
     container: DocsContainer,
-    toc: { title: "On this page", headingSelector: "h2, h3" },
+    toc: { title: "On this page", headingSelector: "h2" }, //"h2, h3"
   },
 }
 

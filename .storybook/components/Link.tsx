@@ -17,7 +17,7 @@ export function Link({ children, href, ...props }: LinkProps) {
 
   if (isStoryName) {
     const parts = storyName.split("/")
-    const name = parts.length > 2 ? parts[parts.length - 1] : "base"
+    const name = parts.length > 2 ? parts[parts.length - 1] : "docs"
     const components = parts.slice(0, parts.length - 1)
     const kind = components.join("/")
     return (

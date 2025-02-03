@@ -8,6 +8,8 @@ import { Meta, Intro } from '../../.storybook/components';
 Our Design System empowers developers to create consistent, accessible, and visually appealing interfaces while streamlining the development process.
 </Intro>
 
+For developers just begining to get familiarize with design systems, the maintainers behind Storybook created [a wonderful guide](https://storybook.js.org/tutorials/design-systems-for-developers/) that provides some helpful guidance to developers beginning to familiarize themselves with design systems.
+
 Under the hood, our the code behind our Design System is primarily powered by React, Tailwind, and Radix UI. The keys technologies utilized include tools like:
 
 - **[React](https://reactjs.org/docs/hooks-overview.html):** The foundation for our component architecture.
@@ -15,31 +17,40 @@ Under the hood, our the code behind our Design System is primarily powered by Re
 - **[Radix UI](https://www.radix-ui.com/):** We build on Radix UI's low-level components that prioritize accessibility, customization, and a great developer experience.
 - **[Storybook JS](https://storybook.js.org/):** Documenting, sharing and distributing the components.
 - **[Style Dictionary](https://amzn.github.io/style-dictionary/):** This tool imports design tokens from our main Figma Design System, ensuring consistency between design and implementation.
+- **[Vite](https://vitejs.dev/):** - Frontend Tooling: Dev Server & JS Compilation
 
 
--   React v18 (using [hooks](https://reactjs.org/docs/hooks-overview.html))
--   [Tailwind CSS](https://tailwindcss.com) v4.x
--   [Storybook JS](https://storybook.js.org/) v8.x
--   [Vite](https://vitejs.dev/) - Frontend Tooling: Dev Server & JS Compilation
-The maintainers behind Storybook created [a wonderful guide](https://storybook.js.org/tutorials/design-systems-for-developers/) that provides some helpful guidance to developers beginning to familiarize themselves with design systems.
 
-## Getting Started
+## Setup the codebase
 
-### Setup the codebase
+### Prerequisites
+
+Before you start, ensure you have the following tools installed on your machine:
+
+1. **Node.js**:
+
+   - We use `nvm` (Node Version Manager) to manage Node versions. `nvm` allows you to switch between different versions of Node.js easily.
+   - **Installation**:
+
+     - Follow the installation guide for your operating system from the [nvm repository](https://github.com/nvm-sh/nvm#installing-and-updating).
+     - Once `nvm` is installed, navigate to the project root and run:
+
+       ```bash
+       nvm use
+       ```
+
+     - This command switches to the Node.js version specified in the `.nvmrc` file in the project.
+
+2. **Yarn**:
+
+   - Yarn is a package manager that doubles down as a project manager.
+   - **Installation**:
+     - Follow the instructions on the [official Yarn website](https://classic.yarnpkg.com/en/docs/install) to install Yarn.
 
 ```sh 
 npm install
 npm storybook # This will run the Storybook application in development mode.
 ```
-
-### Core Technologies
-
-- node.js, currently standardized on version 22@lts
-- npm, currently standardized on version 10@lts
-
-See `package.json` for other packages used
-
-That's it! All other dependencies should be included when you run `npm i`.
 
 ### Useful Commands
 
