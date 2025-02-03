@@ -19,47 +19,6 @@ Under the hood, our the code behind our Design System is primarily powered by Re
 - **[Style Dictionary](https://amzn.github.io/style-dictionary/):** This tool imports design tokens from our main Figma Design System, ensuring consistency between design and implementation.
 - **[Vite](https://vitejs.dev/):** - Frontend Tooling: Dev Server & JS Compilation
 
-
-
-## Setup the codebase
-
-### Prerequisites
-
-Before you start, ensure you have the following tools installed on your machine:
-
-1. **Node.js**:
-
-   - We use `nvm` (Node Version Manager) to manage Node versions. `nvm` allows you to switch between different versions of Node.js easily.
-   - **Installation**:
-
-     - Follow the installation guide for your operating system from the [nvm repository](https://github.com/nvm-sh/nvm#installing-and-updating).
-     - Once `nvm` is installed, navigate to the project root and run:
-
-       ```bash
-       nvm use
-       ```
-
-     - This command switches to the Node.js version specified in the `.nvmrc` file in the project.
-
-2. **Yarn**:
-
-   - Yarn is a package manager that doubles down as a project manager.
-   - **Installation**:
-     - Follow the instructions on the [official Yarn website](https://classic.yarnpkg.com/en/docs/install) to install Yarn.
-
-```sh 
-npm install
-npm storybook # This will run the Storybook application in development mode.
-```
-
-### Useful Commands
-
-The most common commands can be found in the `package.json`'s `scripts` section:
-
-`component-story`: The default TSX story template. From Gamut.
-`component-doc`: The default component documentation template - each component should have a .tsx and .mdx file. From Gamut.
-`toc-story`: A simple template for a Table of Contents category page. From Gamut.
-
 ## Code Conventions
 
 When developing components in the design system, we have a few development principles you should keep in mind. They will help you with picking good names, design clear & understandable APIs, and keep things consistent.
@@ -97,7 +56,6 @@ If at all possible, stick to standard names you'd find in the DOM or React APIs 
 <CalendarTag selectDate={fn} />
 ```
 
-
 ## Contributing
 
 Congratulations on becoming a contributor to the design system! You are pushing the whole company upwards.
@@ -108,7 +66,7 @@ We don't believe in giving you rigid steps to follow, we prefer guidance and a l
 
 ### How do I know what I can do?
 
-We have a [self-service Jira board set-up for this](https://jira.talendforge.org/secure/RapidBoard.jspa?projectKey=TUX&rapidView=1030). All the tasks in the TODO column are up for grabs!
+We have a [self-service Jira board set-up for this](#todo). All the tasks in the TODO column are up for grabs!
 
 Assign yourself to a ticket, it's all fair game.
 
@@ -198,8 +156,8 @@ export function Component(props: ComponentProps) {...}
 
 ---
 
-import { Component} from '@talend/design-system'
-import { tokens } from '@talend/design-tokens'
+import { Component} from '@open-design-system/components'
+import { tokens } from '@open-design-system/tokens'
 
 <Component
 	isActive
