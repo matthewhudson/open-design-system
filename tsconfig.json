@@ -1,10 +1,6 @@
 {
   "compilerOptions": {
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -26,9 +22,8 @@
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "docs/introduction/contributing.mdx"  ],
-  "exclude": [
-    "node_modules"
-  ]
+    "**/*.tsx",
+    "vite.config.mts"
+  ],
+  "exclude": ["node_modules"]
 }

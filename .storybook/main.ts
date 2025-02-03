@@ -1,4 +1,4 @@
-import type { StorybookConfig } from "@storybook/react-vite"
+import type { StorybookConfig } from "@storybook/nextjs"
 
 import path from "node:path"
 import { mergeConfig } from "vite"
@@ -20,25 +20,26 @@ const config: StorybookConfig = {
     "@storybook/addon-onboarding",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    "@storybook/addon-mdx-gfm",
+    //"@storybook/addon-mdx-gfm",
   ],
 
   core: {
     disableTelemetry: true,
+    //builder: "@storybook/builder-vite",
   },
 
   framework: {
-    name: "@storybook/react-vite",
+    name: "@storybook/nextjs",
     options: {},
   },
 
-  async viteFinal(config) {
-    return mergeConfig(config, {
-      define: {
-        "process.env.UNSAFE_DISABLE_ELEMENT_ERRORS": false,
-      },
-    })
-  },
+  // async viteFinal(config) {
+  //   return mergeConfig(config, {
+  //     define: {
+  //       "process.env.UNSAFE_DISABLE_ELEMENT_ERRORS": false,
+  //     },
+  //   })
+  // },
 
   typescript: {
     reactDocgen: "react-docgen-typescript",
