@@ -24,7 +24,7 @@ export default {
   title: "Components/Card",
   component: Card,
   subcomponents: { CardHeader, CardFooter },
-  tags: ["status:stable"],
+  tags: ["status:under-review"],
 }
 
 const Header = () => (
