@@ -21,23 +21,23 @@ const config = {
     "@storybook/addon-mdx-gfm",
   ],
 
-  // framework: {
-  //   name: "@storybook/nextjs",
-  //   name: "@netlify/plugin-storybook"
-  //   options: {},
-  // },
-
   core: {
     disableTelemetry: true,
   },
 
-  // async viteFinal(config) {
-  //   return mergeConfig(config, {
-  //     define: {
-  //       "process.env.UNSAFE_DISABLE_ELEMENT_ERRORS": false,
-  //     },
-  //   })
-  // },
+  framework: {
+    name: "@storybook/react-vite",
+    options: {},
+  },
+
+  async viteFinal(config) {
+    return mergeConfig(config, {
+      define: {
+        "process.env.UNSAFE_DISABLE_ELEMENT_ERRORS": false,
+      },
+    })
+  },
+
   typescript: {
     reactDocgen: "react-docgen-typescript",
   },
