@@ -1,22 +1,58 @@
 backend:
   name: git-gateway
-  branch: main # Branch to update (optional; defaults to master)
+  branch: main
+
 media_folder: public/img
 public_folder: img
+
 collections:
-  - name: "pages"
-    label: "Pages"
+  - name: "introduction"
+    label: "Introduction"
+    folder: "docs/introduction"
+    create: true
+    extension: mdx
+    format: frontmatter
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
     files:
-    - label: "Home"
-      name: "home"
-      file: "docs/home.md"
-      fields:
-        - { label: "Title", name: "title", widget: "string"}
-        - { label: "Publish Date", name: "date", widget: "datetime" }
-        - { label: "Body", name: "body", widget: "markdown"}
-        - label: 'Cats'
-          name: "cats"
-          widget: list
-          fields:
-            - { label: "Name", name: "name", widget: "string"}
-            - { label: "Description", name: "description", widget: "text"}
+      - label: "Welcome"
+        name: "welcome"
+        file: "docs/introduction/1-welcome.mdx"
+      - label: "Getting Started"
+        name: "getting-started"
+        file: "docs/introduction/2.1-getting-started.mdx"
+      - label: "For Designers"
+        name: "for-designers"
+        file: "docs/introduction/2.2-for-designers.mdx"
+      - label: "For Developers"
+        name: "for-developers"
+        file: "docs/introduction/2.3-for-developers.mdx"
+      - label: "For Partners"
+        name: "for-partners"
+        file: "docs/introduction/2.4-for-partners.mdx"
+      - label: "For Quality Testers"
+        name: "for-testers"
+        file: "docs/introduction/2.5-for-quality-testers.mdx"
+      - label: "Governance"
+        name: "governance"
+        file: "docs/introduction/3.1-governance.mdx"
+      - label: "Component Lifecycle"
+        name: "component-lifecycle"
+        file: "docs/introduction/3.2-component-lifecycle.mdx"
+      - label: "Release Process"
+        name: "release-process"
+        file: "docs/introduction/3.3-release-process.mdx"
+      - label: "Atomic Design"
+        name: "atomic-design"
+        file: "docs/introduction/3.4-atomic-design.mdx"
+
+  - name: "design-tokens"
+    label: "Design Tokens"
+    folder: "docs/design-tokens"
+    create: true
+    extension: mdx
+    format: frontmatter
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
