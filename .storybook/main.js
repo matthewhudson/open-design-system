@@ -21,10 +21,11 @@ const config = {
     "@storybook/addon-mdx-gfm",
   ],
 
-  framework: {
-    name: "@storybook/nextjs",
-    options: {},
-  },
+  // framework: {
+  //   name: "@storybook/nextjs",
+  //   name: "@netlify/plugin-storybook"
+  //   options: {},
+  // },
 
   core: {
     disableTelemetry: true,
