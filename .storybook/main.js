@@ -1,6 +1,8 @@
+import path from "node:path"
+
 /** @type { import('@storybook/nextjs').StorybookConfig } */
 const config = {
-  staticDirs: ["../public"],
+  staticDirs: [path.join(process.cwd(), ".storybook/public")],
 
   stories: [
     "../docs/*.@(md|mdx)",
