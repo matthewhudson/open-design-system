@@ -5,7 +5,7 @@ import { Link } from "./components/Link"
 
 const brand = {
   brandTitle: "Design System",
-  brandUrl: "https://github.com/matthewhudson/trae-design-system",
+  brandUrl: "https://github.com/matthewhudson/open-design-system",
   brandImage: "https://placehold.co/150x30",
   fontBase:
     '"Inter", Helvetica, Arial, system-ui, sans-serif, "Segoe UI", Roboto, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
