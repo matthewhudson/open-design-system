@@ -27,7 +27,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "docs/introduction/contributing.mdx"  ],
   "exclude": [
     "node_modules"
   ]

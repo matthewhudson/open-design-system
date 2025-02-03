@@ -1,0 +1,9 @@
+.base {
+  margin-bottom: 24px;
+}
+
+.base>* {
+  font-size: 1.25rem !important;
+  line-height: 1.5rem !important;
+  color: #444 !important;
+}

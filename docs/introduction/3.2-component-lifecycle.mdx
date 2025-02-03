@@ -9,21 +9,35 @@ import { Meta, Status, Intro, Props } from '../../.storybook/components';
   lifecycle. Within each stage, components meet different requirements and
   receive different levels of support.
   https://gitlab-org.gitlab.io/gitlab-ui/?path=/story/tokens-all--default
+
+  Maintaining Status would maybe require something like: https://www.supernova.io/design-system-management
 </Intro>
 
-## Stable
+## Managing Component Status
+
+Component status can be set via Storybook's story  `tags` parameter (more of [Storybook tags](https://storybook.js.org/docs/writing-stories/tags)). For example, for `Input.stories.tsx`:
+
+```tsx
+export default {
+  title: "Components/Atom/Input",
+  component: Input,
+  tags: ["status:stable"], 
+}
+```
+
+### Stable
 
 <Status variant="stable" aria-hidden="true" />
 
 Stable components solve a proven use case. They meet all of our quality standards including accessibility, [browser support](Introduction/Browser-Support/Docs), localization, test coverage, and documentation. Changes to the component API are unlikely and follow [semantic versioning](https://semver.org/).
 
-## Internal
+### Internal
 
 <Status variant="internal" aria-hidden="true" />
 
 Internal components are lower-level, partial building blocks. They are intended for advanced use cases that aren't covered by the regular, feature-complete components. Developers are responsible for ensuring accessibility, [browser support](Introduction/Browser-Support/Docs), and localization. Changes to the component API are unlikely and follow [semantic versioning](https://semver.org/).
 
-## Experimental
+### Experimental
 
 <Status variant="experimental" aria-hidden="true" />
 
@@ -37,7 +51,7 @@ Experimental components are exported separately from stable components. Import t
 import { Component } from '@sumup-oss/circuit-ui/experimental';
 ```
 
-## Under Review
+### Under Review
 
 <Status variant="under-review" aria-hidden="true" />
 
@@ -45,7 +59,7 @@ Our quality requirements evolve over time. Existing components that haven't been
 
 [Contributions](Contributing/Overview/Docs) to resolve the issues are welcome!
 
-## Legacy
+### Legacy
 
 <Status variant="legacy" aria-hidden="true" />
 
@@ -59,7 +73,7 @@ import { Component } from '@sumup-oss/circuit-ui/legacy';
 
 Some legacy components require third-party dependencies which aren't bundled with Circuit UI. Refer to each component's documentation for a list of dependencies that need to be installed manually.
 
-## Deprecated
+### Deprecated
 
 <Status variant="deprecated" aria-hidden="true" />
 

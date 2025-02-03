@@ -1,0 +1,62 @@
+name: Visual testing
+
+on:
+  workflow_dispatch:
+  pull_request:
+    # By default, a workflow only runs when a pull_request event's activity type is opened, synchronize, or reopened
+    types: [labeled, synchronize, opened, reopened, ready_for_review]
+    branches:
+      - master
+  push:
+    branches:
+      - master
+
+# This allows a subsequently queued workflow run to interrupt previous runs
+concurrency:
+  group: '${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}'
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  deployments: read
+  pull-requests: write
+  statuses: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: pull_request_unsafe
+    if: ( github.ref == 'refs/heads/master' || contains(github.event.pull_request.labels.*.name, 'need visual approval') )
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 #v4.2.2
+        with:
+          fetch-depth: 0
+
+      - name: Use Node.js
+        uses: ./.github/actions/setup-node
+
+      - name: Install dependencies
+        run: yarn --frozen-lock
+
+      - name: Publish PR to DS Chromatic
+        if: github.ref != 'refs/heads/master'
+        # https://github.com/chromaui/chromatic-cli/issues/739
+        uses: chromaui/action@v11
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          workingDir: packages/storybook-one
+          exitZeroOnChanges: true # Option to prevent the workflow from failing in PR
+          # Handle monorepos https://www.chromatic.com/docs/monorepos
+          forceRebuild: true
+
+      - name: Publish Master to DS Chromatic
+        if: github.ref == 'refs/heads/master'
+        # https://github.com/chromaui/chromatic-cli/issues/739
+        uses: chromaui/action@v11
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          workingDir: packages/storybook-one
+          autoAcceptChanges: true # Option to accept any change for this baseline refresh
+          forceRebuild: true

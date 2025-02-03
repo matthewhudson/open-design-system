@@ -1,16 +1,16 @@
 import { Meta, Status, Intro, Props } from '../../.storybook/components';
 
-<Meta title="Introduction/Governance/Governance Process" />
+<Meta title="Introduction/Governance/Intro" />
 
-# Design System Governance Process
+# Governance Process
 
 <Intro>
 A design system is a living product, evolving alongside the organization it serves. At Star Tribune, our design system provides structured components, comprehensive documentation, and a unified design language to empower product teams. This guide outlines the governance process for creating, approving, and deploying components while balancing urgency ("shipping") with system integrity.
 </Intro>
 
-### Philosophy
+## Philosophy
 
-- **Collaboration over Gatekeeping**: Engineers, designers, and product managers share ownership of the system’s health.
+- **Collaboration over Gatekeeping**: Engineers, designers, and product managers share ownership of the system's health.
 - **Flexibility with Accountability**: Teams may deviate from the system to meet deadlines, but all deviations ("snowflakes") must be tracked and reviewed for potential integration.
 - **Iterative Improvement**: We embrace retrospection to refine components over time.
 
@@ -19,9 +19,9 @@ A design system is a living product, evolving alongside the organization it serv
 1. **Check Storybook**:
     Teams should browse Storybook and default to using the design system by to help create new product work. The best case scenario is that a team comes to the library, finds the component they need and finds that it fulfills all their requirements. They plug in the component and carry on with more pressing matters. Hooray for best case scenarios!
 
-    Questions? Concerns? Don’t see what you need, continue to step 2.
+    Questions? Don't see what you need, time to reach out to the design team!
 2. **Talk**:
-    If the team comes to the design system and doesn’t find the component they need, if an existing component doesn’t fulfill all the requirements, or if they’re just not sure if the system has what they need, the first step is to reach out to Design System Lead (Carla Fabian). The design system team via Slack, issue trackers (Github, Jira, etc), or other channel (@TODO: the design system team should establish clear support protocol). The teams will have a conversation to better understand the issue, and then determine whether or not new work needs to happen. Often the design system team can help guide the product team to an existing solution that meets the requirements. Hooray for conversation!
+    If the team comes to the design system and doesn't find the component they need, if an existing component doesn't fulfill all the requirements, or if they're just not sure if the system has what they need, the first step is to reach out to Design System Lead (Carla Fabian). The design system team via Slack, issue trackers (Github, Jira, etc), or other channel (@TODO: the design system team should establish clear support protocol). The teams will have a conversation to better understand the issue, and then determine whether or not new work needs to happen. Often the design system team can help guide the product team to an existing solution that meets the requirements. Hooray for conversation!
 
     If the teams determine the work is part of the design system, the work will be added to the design system backlog capturing the work to be done.
 3. **Design & Build**:
@@ -41,12 +41,19 @@ A design system is a living product, evolving alongside the organization it serv
 
    1. **A “snowflake”**, which is a one-off component that only really pertains to one specific product or use case (such as a news design team project, a super intricate and specific data visualization, or any component that feels especially challenging to abstract into a general-use component)
    2. **Part of the design system**, which is a component or variation that is part of library that serves all products (such as adding a breadcrumbs component or perhaps adding an “x” button to a card component in order to make it dismissable)
- If the teams decide the work is a snowflake, the work will be added to the specific product team’s backlog in accordance with the design system’s snowflake guidelines (@TODO: the design system team should establish guidelines for managing snowflakes to be able to track components and make refactoring into the design system easier down the road).
+ If the teams decide the work is a snowflake, the work will be added to the specific product team's backlog in accordance with the design system's snowflake guidelines (@TODO: the design system team should establish guidelines for managing snowflakes to be able to track components and make refactoring into the design system easier down the road).
+
+We track planned work for components in the Design System Board on JIRA.
+
+- If there's a ticket there you want to take on, send a Slack to #design-team or come to Design Team Office hours and lets talk about it!
+- If the work you'd like to do isn't captured in a JIRA ticket, talk to us and we can work with you to create that ticket.
+- If you would like to make a request for work to be done, please discuss with us on Slack or during Design Team Office Hours.
+- If you'd like to pitch a change to the design system, please attend Gamut Crit, come to Design Team Office Hours, or send a Slack message to #design-team.
 
 ### **Stakeholders**  
 
 - **Product:** Drive initial requirements based on user/business needs.
-- **Design:** Propose solutions aligned with the design system’s principles.  
+- **Design:** Propose solutions aligned with the design system's principles.  
 - **Engineering (Advisory Role):** Provide early feasibility feedback.  
 
 ### **Activities**  
@@ -61,7 +68,7 @@ A design system is a living product, evolving alongside the organization it serv
 
 ### **Key Considerations**  
 
-- Product/Design must understand the system’s exposed features (e.g., tokens, atomic design responsive patterns).
+- Product/Design must understand the system's exposed features (e.g., tokens, atomic design responsive patterns).
 - Ideally, PMs/Designers are generally aware of the publishing workflow as a whole and the overall system's architecture **before** involving engineers.  
 - Use system documentation to self-serve answers (e.g., “Can this be built with existing tokens?”).  
 
@@ -160,7 +167,7 @@ A design system is a living product, evolving alongside the organization it serv
 
 When the component is built, testing will ensue across the following areas:
 
-- **Documentation** - do Storybook docs exist: props, examples, and “do’s/don’ts”.  
+- **Documentation** - do Storybook docs exist: props, examples, and “do's/don'ts”.  
 - **Content** – can this component or variation handle a variety of content situations (such as lengthy or internationalized text)?
 - **Accessibility** – does this component meet or exceed accessibility requirements and follow accessibility guidelines?
 - **Cross-browser/device** – test across supported browsers and devices

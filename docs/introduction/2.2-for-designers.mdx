@@ -1,13 +1,40 @@
-import { Meta } from '@storybook/blocks';
+import { Meta, Intro } from '../../.storybook/components';
 
 <Meta title="Introduction/Getting Started/For Designers" />
 
 # Getting Started for Designers
 
-TKTKTK 
+<Intro>
+  This guide covers our Figma implementation strategy and token management workflow.
+</Intro>
 
-We use Figma as our base implementation tool for all design work.
+## Figma Foundation
 
-We use [Tokens Studio plugin](https://www.figma.com/community/plugin/843461159747178978/tokens-studio-for-figma) for managing tokens.
+### Core Setup
 
-We use 
+1. **Start with the Library**  
+    Always begin new projects in our [Figma Team Library](https://www.figma.com/file/...)  
+    - Use **Components tab** → "Search widgets" to find approved patterns  
+    - Never detach components - use variants instead  
+
+2. **Variables vs. Tokens Studio**  
+   We use a hybrid approach:  
+   ```plaintext
+   Figma Variables → Basic design decisions (spacing, radii)
+   Tokens Studio → Complex token relationships (typography, shadows)
+   ```
+3. **Layer Naming Convention**
+    Follow our `category/component/variant` structure:
+    - Button/Primary/Hover → ✅
+    - Blue clicky thing → ❌
+
+## Token Management 
+
+- Naming Tokens
+- Token Updates
+
+## Collaboration Protocol
+
+### Developer Handoff
+
+TKTKTK

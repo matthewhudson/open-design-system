@@ -4,7 +4,8 @@
 
 /**
  * Best practice from http://callmenick.com/post/the-new-box-sizing-reset
- * TL;DR: It’s easier to override and a slight performance boost.
+ * TL;
+ DR: It's easier to override and a slight performance boost.
  */
 *,
 *::before,

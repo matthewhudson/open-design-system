@@ -1,4 +1,5 @@
 import React from "react"
+import type { CSSProperties } from "react"
 import type { ReactNode } from "react"
 import { Unstyled } from "@storybook/blocks"
 import LinkTo from "@storybook/addon-links/react"
@@ -11,6 +12,95 @@ type Variant =
   | "legacy"
   | "deprecated"
   | "internal"
+
+type BadgeConfig = {
+  style: CSSProperties
+  label: string
+}
+
+const badges = {
+  // 'status:stable' is excluded to reduce visual clutter
+  "status:experimental": {
+    label: "Experimental",
+    style: {
+      color: "#e27900",
+      backgroundColor: "#fdf4db",
+      borderColor: "#e87c00",
+      display: "inline-block",
+      padding: "2px 6px",
+      fontSize: "12px",
+      lineHeight: "1",
+      textAlign: "center",
+      borderRadius: "999999px",
+      borderWidth: "1px",
+      borderStyle: "solid",
+    },
+  },
+  "status:under-review": {
+    label: "Under Review",
+    style: {
+      color: "#e27900",
+      backgroundColor: "#fdf4db",
+      borderColor: "#e87c00",
+      display: "inline-block",
+      padding: "2px 6px",
+      fontSize: "12px",
+      lineHeight: "1",
+      textAlign: "center",
+      borderRadius: "999999px",
+      borderWidth: "1px",
+      borderStyle: "solid",
+    },
+  },
+  "status:legacy": {
+    label: "Legacy",
+    style: {
+      color: "#e27900",
+      backgroundColor: "#fdf4db",
+      borderColor: "#e87c00",
+      display: "inline-block",
+      padding: "2px 6px",
+      fontSize: "12px",
+      lineHeight: "1",
+      textAlign: "center",
+      borderRadius: "999999px",
+      borderWidth: "1px",
+      borderStyle: "solid",
+    },
+  },
+  "status:deprecated": {
+    label: "Deprecated",
+    style: {
+      color: "#e27900",
+      backgroundColor: "#fdf4db",
+      borderColor: "#e87c00",
+      display: "inline-block",
+      padding: "2px 6px",
+      fontSize: "12px",
+      lineHeight: "1",
+      textAlign: "center",
+      borderRadius: "999999px",
+      borderWidth: "1px",
+      borderStyle: "solid",
+    },
+  },
+  "status:internal": {
+    label: "Internal",
+    style: {
+      color: "#e27900",
+      backgroundColor: "#fdf4db",
+      borderColor: "#e87c00",
+      display: "inline-block",
+      padding: "2px 6px",
+      fontSize: "12px",
+      lineHeight: "1",
+      textAlign: "center",
+      borderRadius: "999999px",
+      borderWidth: "1px",
+      borderStyle: "solid",
+    },
+  },
+} satisfies Record<string, BadgeConfig>
 
 interface StatusProps {
   /**

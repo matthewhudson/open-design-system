@@ -2,15 +2,15 @@
   box-sizing: border-box;
   float: left;
   width: 100%;
-  margin-top: var(--cui-spacings-giga);
+  margin-top: 24px;
 }
 
 @media (min-width: 768px) {
   .base.base {
-    width: calc(50% - var(--cui-spacings-giga));
+    width: calc(50% - 24px);
     min-height: 185px;
     /* This prevents the cards from awkwardly wrapping if one of them only has one line of text */
-    margin-right: var(--cui-spacings-giga);
+    margin-right: 24px;
   }
 }
 
@@ -20,7 +20,7 @@
 
 .base h2 {
   padding: 0;
-  margin-bottom: var(--cui-spacings-giga);
+  margin-bottom: 24px;
   border: none;
 }
 

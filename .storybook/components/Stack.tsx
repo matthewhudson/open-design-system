@@ -15,9 +15,9 @@
 
 import React from "react"
 import type { ReactNode } from "react"
-import { clsx } from "../../src/styles/clsx.js"
+import { clsx } from "../../src/styles/clsx"
 
-//import classes from './Stack.module.css';
+import classes from "./Stack.module.css"
 
 interface StackProps {
   children: ReactNode
@@ -26,7 +26,7 @@ interface StackProps {
 
 export function Stack({ children, vertical }: StackProps) {
   return (
-    <div /*className={clsx(classes.base, vertical && classes.vertical)}*/>
+    <div className={clsx(classes.base, vertical && classes.vertical)}>
       {children}
     </div>
   )

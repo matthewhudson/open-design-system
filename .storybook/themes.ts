@@ -9,6 +9,7 @@ const brand = {
   brandImage: "https://placehold.co/150x30",
   fontBase:
     '"Inter", Helvetica, Arial, system-ui, sans-serif, "Segoe UI", Roboto, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+  fontCode: "Monaco, Consolas, 'Lucida Console', monospace",
 }
 
 export const light = create({

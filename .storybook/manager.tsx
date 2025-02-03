@@ -4,7 +4,7 @@ import "@sumup-oss/design-tokens/dynamic.css"
 import type { CSSProperties } from "react"
 import { addons, types } from "@storybook/manager-api"
 
-import { dark, light, listenToColorScheme } from "./themes.js"
+import { dark, light, listenToColorScheme } from "./themes"
 
 type BadgeConfig = {
   style: CSSProperties

@@ -1,10 +1,100 @@
-import { Meta } from '@storybook/blocks';
+import { Meta, Intro } from '../../.storybook/components';
 
 <Meta title="Introduction/Getting Started/Intro" />
 
 # Getting Started 
 
-## Resources
+<Intro>
+Our design system is the connective tissue of our digital products - a living ecosystem that grows stronger with every contribution. Like a city's infrastructure, it provides reliable foundations so teams can focus on creating unique experiences.
+</Intro>
 
-The idea for Atomic Design is created to Brad Frost, a designer whose book __[Atomic Design](https://atomicdesign.bradfrost.com/table-of-contents/)__ details all that goes into creating and maintaining robust design systems, allowing you to roll out higher quality, more consistent UIs faster than ever before. This book introduces a methodology for thinking of our UIs as thoughtful hierarchies, discusses the qualities of effective pattern libraries, and showcases techniques to transform your team's design and development workflow.
+## What's a design system?
+
+First, it is a collaborative in-house product.
+It has the same lifecycle as any product (it begins, it iterates, it tries to fit its customer's needs etc…).
+It is collaborative because its customers are also its contributors.
+
+What is that product? _It is a shared design language and the tools required to “speak” that language_.
+
+- **Documentation**: design guidelines (when to use a layout or a component, how, why?), UX writing guidelines, component guidelines...
+  This is the ruleset of the language, the grammar: it insures the design has a single voice and is homogenous.
+- **Libraries**: a Figma component library and a React component library. These are the "words", the vocabulary of the design system.
+  Using the components according to the provided ruleset ensures both homogeneity and an efficient, high-quality experience.
+- **People**: a core design system team. They are caregivers, maintainer of the design language.
+  They help gather the customers' needs and plan for evolution of the product. They are not the primary productive force behind the language, but simply its curators.
+
+## Why do we need a design system?
+
+- **Single source of truth**: we have many products, many teams and individual designers.
+  All of them could provide different "voices" creating an overall product that lacks unity.
+  Gathering around a single ruleset ensures we all speak the same language.
+- **Homogenised experience**: following a shared design language, the different products forming our product experiences will share the same behaviours and patterns.
+  Every aspect of the product benefits from one another: when users learn a pattern once, that pattern will be understood across the whole solution.
+  This also create a singular brand identity.
+- **Industrialisation and cost / time reduction**: producing shared libraries and following the same rules ensures work is only done once. No more duplicates.
+  Time is spent once and everybody benefits. This enables all teams to spend more time on quality, refining the experience overall.
+- **Maintainability**: having a core team and a dedicated roadmap helps maintaining this large product.
+  They help prioritize and dispatch the necessary maintaining work.
+  Additionally, having gathered components into shared libraries also means that maintenance is only done once: there's no need to update components in a variety of project anymore.
+- **Consistency**: Unified interaction patterns and visual language across all products
+- **Accessibility**: WCAG 2.1 AA compliance built into every component
+- **Performance**: Optimized bundle size and rendering efficiency
+- **Adaptability**: Flexible theming system for brand-specific implementations
+- **Collaboration**: Shared vocabulary between designers and developers
+
+As a design language, it is only relevant if it is a foundation, a baseline behind every facet of our products (ideation, design, implementation).
+If it is not being used, then it's actively being destroyed: as a language it needs to be "spoken" to be real.
+
+## How to use the design system?
+
+To start exploring and understanding components:
+
+1. **Browse Components:**  
+    Navigate through our library using the Storybook sidebar to explore design options.
+
+2. **Review Docs:**  
+    Open the **Docs** section to understand available props and configuration parameters.
+
+3. **Experiment with Code:**  
+    Use the live editor to tweak parameters and view changes in real-time.
+
+Ideally, teams should browse this Storybook and default to using the design system to create new product work. The best case scenario is that a team comes to the library, finds the component they need and finds that it fulfills all their requirements. They plug in the component and carry on with more pressing matters. Hooray for best case scenarios!
+
+Questions? Concerns? Don't see what you need, check out our [Governance](#todo) documentation.
+
+## How to contribute?
+
+**Synchronising** is contributing.
+The design system needs to be aware of the product suite's entire needs to ensure that its vocabulary (components) is large enough or that its grammar (patterns, guidelines) still matches the current needs.
+
+**Using the design system** is contributing.
+Using it to build Cloud products is keeping it alive, making it relevant.
+
+**Promoting** is contributing.
+Promoting its use as a foundation of all design and implementation work is a huge contribution.
+Normalising its usage, its knowledge amongst stakeholders (PMs, developers, product designers, C levels etc...) is ensuring the shared language spreads and stays relevant.
+
+Helping **refine the roadmap** is contributing.
+We always need to plan the next step, to iterate on something or to produce new contents.
+The core team will suggest roadmaps, but the customers' needs define which is the right one.
+
+**Producing new guidelines** and new components is contributing.
+When the design system product lacks something any product requires, contribution is necessary.
+The core team then acts as a support team, providing help (code, design, doc) _when needed_ and ensuring the latest addition to the design system fits the established language.
+
+**Giving feedback** is contributing.
+The design system is a living language: it must stay up to date to fit its customers' needs.
+Telling us what went wrong, what needs to change is a contribution to that goal.
+
+**Maintaining** is contributing.
+There's always something to be done.
+The system is a product, it grows old and needs updating, changing, challenging.
+
+**Contributing components** (new ones or iterations on current ones), even without being asked to contribute is contributing.
+The design system is not "the design system team's product".
+It's Talend's product. Nobody needs the core team's validation to work on it.
+
+> ["Ask not what your design system can do for you. Ask what you can do for your design system"](https://twitter.com/markdalgleish/status/1230451876081963009?s=20).
+
+You are part of the design system. It only gives back the amount of care you put into it yourself.
 

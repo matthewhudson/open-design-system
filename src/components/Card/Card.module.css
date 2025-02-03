@@ -2,15 +2,15 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: var(--cui-bg-normal);
-  border: var(--cui-border-width-mega) solid var(--cui-border-subtle);
-  border-radius: var(--cui-border-radius-mega);
+  background-color: #fff;
+    border: 2px solid #e3e7ec;
+    border-radius: 16px;
 }
 
 .mega {
-  padding: var(--cui-spacings-mega) var(--cui-spacings-mega);
+  padding: 16px;
 }
 
 .giga {
-  padding: var(--cui-spacings-mega) var(--cui-spacings-giga);
+  padding: 24px;
 }

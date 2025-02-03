@@ -19,7 +19,7 @@ import type { ReactNode } from "react"
 import { Card } from "../../src/components/Card/Card"
 import { Headline } from "../../src/components/Headline/Headline"
 import { slugify } from "../slugify"
-//import classes from "./Teaser.module.css"
+import classes from "./Teaser.module.css"
 
 interface TeaserProps {
   title: string
@@ -28,7 +28,7 @@ interface TeaserProps {
 
 export function Teaser({ title, children }: TeaserProps) {
   return (
-    <Card /*className={classes.base}*/>
+    <Card className={classes.base}>
       <Headline as="h2" size="s" id={slugify(title)}>
         {title}
       </Headline>
