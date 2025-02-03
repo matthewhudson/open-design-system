@@ -1,13 +1,13 @@
 .base {
   display: block;
   width: 100%;
-  margin-top: var(--cui-spacings-giga);
+  margin-top: 24px;
 }
 
 @media (min-width: 480px) {
   .base {
     display: flex;
-    margin-top: var(--cui-spacings-mega);
+    margin-top: 16px;
   }
 }
 

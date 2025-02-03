@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: var(--cui-spacings-giga);
+  margin-bottom: 24px;
 }
 
 .no-headline {
@@ -10,7 +10,7 @@
 }
 
 .base .close {
-  margin-top: calc(-1 * var(--cui-spacings-byte));
-  margin-right: calc(-1 * var(--cui-spacings-mega));
-  margin-bottom: calc(-1 * var(--cui-spacings-byte));
+  margin-top: calc(-1 * 16px);
+    margin-right: calc(-1 * 24px);
+    margin-bottom: calc(-1 * 16px);
 }
