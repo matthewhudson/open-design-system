@@ -25,13 +25,11 @@ Design systems evolve with the organization, offering components, documentation,
 3. **Design & Build**:
     Product, Design, and Engineering will get to work, building the new component. For design, this may take the form of a wireframe, napkin sketch, comp, in-browser prototype, or any other artifact that quickly and clearly articulates the use case and defines the work to be done. For engineering, this may include proof-of-concepts, discovery spikes, or other vetting. Both Design and Engineering will deliver output for stakeholder approval.
 4. **Review & Release**:
-    Product, Design, and Engineering will regroup with stakeholders to review their work and determine whether that work meets all requirements. If things are missing, the teams will iterate over the concept and continue reviewing until the requirements are met and the new component is released to the design system.
-5. **Adopt**:
-    The new component is now ready to be integrated into the website itself.
+    Product, Design, and Engineering will regroup with stakeholders to review their work and determine whether that work meets all requirements. If things are missing, the teams will iterate over the concept and continue reviewing until the requirements are met and the new component is released to the design system. The new component is now ready to be integrated into the website itself.
 
 ---
 
-## Step 1: Talk & Ideation Phase  
+## Phase 1: Talk & Ideation 
 
 *Define the problem, scope requirements, and validate alignment with system goals.*  
 
@@ -75,15 +73,15 @@ We track planned work for components in the Design System Board on JIRA.
 
 ---
 
-## Design & Build
+## Phase 2: Design & Build
 
-*Create Figma prototypes a using atomic design principles and design tokens. Cross-functional review to ensure alignment and readiness.*  
+*Create Figma prototypes a using atomic design principles and design tokens. Cross-functional review to ensure alignment and readiness. Engineers develop the component in React, document in Storybook.*  
 
 ### **Stakeholders**  
 
 - **Design:** Build in Figma, utilizing tokens adn adhering to established [Atomic Design Principles](Introduction/Governance/Atomic Design) and overall [design team practices](Introduction/Getting Started/For Designers).  
-- **Engineers (Review):** Validate technical feasibility.
 - **Product:** Validate final design against requirements and create ticket(s) capturing all requirements necessary for development.  
+- **Engineers (Review):** Validate technical feasibility. Build with React, Tailwind, Storybook stories, Jest tests, and when necessasry possibly other tests such as Cypress E2E when appropriate.  
 
 ### **Activities**  
 
@@ -91,6 +89,10 @@ We track planned work for components in the Design System Board on JIRA.
 - Apply existing design tokens (color, spacing, typography).  
 - Document interaction states (hover, focus, loading).  
 - Review designs and engineering plans for final stakeholder approval and sign-off.
+- Engineers map Figma tokens to Tailwind classes (manually until style-dictionary is adopted).  
+- Engineers build component with props for variants/states.  
+- Engineers write unit tests (e.g., Jest).  
+- Engineers write Storybook documentation, with contributions from design.
 
 ### **Outputs**  
 
@@ -106,42 +108,25 @@ We track planned work for components in the Design System Board on JIRA.
 - Engineers review for feasibility (e.g., "Can Tailwind implement this animation?").  
 - All teams should reject designs that ignore system standards without justification.  
 - Engineers and designers collaborate to resolve discrepancies (e.g., "Figma uses `spacing-4`, but Tailwind uses `p-4`").  
+
 ---
 
-## 4. Build Phase  
+## Phase 3: Release & Review
 
-*Develop the component in React, document in Storybook, and test.*  
+*Finalize docs and validate quality. Release to production, gather feedback and iterate.*  
 
 ### **Stakeholders**  
 
-- **Product:** Ensure refined ticket meets engineering R
-- **Engineers:** Build with React, Tailwind, Storybook stories, Jest tests, and when necessasry possibly other tests such as Cypress E2E when appropriate.
-- **Designers:** Confirm implementation matches Figma.  
+- **Engineers:** Write technical docs with clarity for broad set of stakeholders.
+- **QA:** Validate functionality and a11y.  
+- **PMs/Designers:** Announce availability to product teams.  
+- **All Teams:** Report issues or enhancement requests.  
 
 ### **Activities**  
 
-- Map Figma tokens to Tailwind classes (manually until style-dictionary is adopted).  
-- Build component with props for variants/states.  
-- Write unit tests (e.g., Jest).  
--
-
-### **Outputs**  
-
-
-### **Key Considerations**  
-
-
----
-
-## 5. Review & Testing Phase  
-
-*Finalize docs and validate quality.*  
-
-### **Stakeholders**  
-
-- **Engineers:** Write technical docs.  
-- **Technical Writers:** Ensure clarity for consumers.  
-- **QA:** Validate functionality and a11y.  
+- Merge changes and update design system version and changelog.
+- Track adoption metrics.  
+- Schedule retrospectives for complex components.
 
 ### **Activities**  
 
@@ -160,37 +145,13 @@ When the component is built, testing will ensue across the following areas:
 
 ### **Outputs**  
 
+- Component available for reference in production Storybook.  
+- Component available for adoption in production codebase.  
+- Release notes communicated via Slack/email.
 - Merged PR with tests passing.  
 
 ### **Key Considerations**  
 
 - Treat documentation as a **living resource**—update as the component evolves.  
-
----
-
-## 6. Release Phase  
-
-*Release to production, gather feedback and iterate.*  
-
-### **Stakeholders**  
-
-- **DevOps:** Manage CI/CD pipeline.  
-- **PMs/Designers:** Announce availability to product teams.  
-- **All Teams:** Report issues or enhancement requests.  
-
-### **Activities**  
-
-- Merge to `main` branch.  
-- Update design system version and changelog.
-- Track adoption metrics.  
-- Schedule retrospectives for complex components.
-
-### **Outputs**  
-
-- Component available for reference in production Storybook.  
-- Component available for adoption in production codebase.  
-- Release notes communicated via Slack/email.  
-
-### **Key Considerations**  
-
 - Monitor usage and errors (e.g., via Datadog?, Vercel?).  
+
