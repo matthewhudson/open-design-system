@@ -39,8 +39,8 @@ A design system is a living product, evolving alongside the organization it serv
 
  If the teams agree that new work needs to happen, the first thing that needs sorted is whether or not the the work is:
 
-   1. **A “snowflake”**, which is a one-off component that only really pertains to one specific product or use case (such as a news design team project, a super intricate and specific data visualization, or any component that feels especially challenging to abstract into a general-use component)
-   2. **Part of the design system**, which is a component or variation that is part of library that serves all products (such as adding a breadcrumbs component or perhaps adding an “x” button to a card component in order to make it dismissable)
+   1. **A "snowflake"**, which is a one-off component that only really pertains to one specific product or use case (such as a news design team project, a super intricate and specific data visualization, or any component that feels especially challenging to abstract into a general-use component)
+   2. **Part of the design system**, which is a component or variation that is part of library that serves all products (such as adding a breadcrumbs component or perhaps adding an "x" button to a card component in order to make it dismissable)
  If the teams decide the work is a snowflake, the work will be added to the specific product team's backlog in accordance with the design system's snowflake guidelines (@TODO: the design system team should establish guidelines for managing snowflakes to be able to track components and make refactoring into the design system easier down the road).
 
 We track planned work for components in the Design System Board on JIRA.
@@ -70,59 +70,41 @@ We track planned work for components in the Design System Board on JIRA.
 
 - Product/Design must understand the system's exposed features (e.g., tokens, atomic design responsive patterns).
 - Ideally, PMs/Designers are generally aware of the publishing workflow as a whole and the overall system's architecture **before** involving engineers.  
-- Use system documentation to self-serve answers (e.g., “Can this be built with existing tokens?”).  
+- Use system documentation to self-serve answers (e.g., "Can this be built with existing tokens?").  
 
 ---
 
-## 2. Design Phase  
+## Design & Build
 
-*Create Figma prototypes a using atomic design principles and design tokens.*  
+*Create Figma prototypes a using atomic design principles and design tokens. Cross-functional review to ensure alignment and readiness.*  
 
 ### **Stakeholders**  
 
-- **Designers:** Build in Figma, adhering to established Atomic Design Principles: Atoms → Molecules → Organisms → Templates → Pages.  
-- **Engineers (Review):** Validate technical feasibility.  
+- **Design:** Build in Figma, utilizing tokens adn adhering to established [Atomic Design Principles](Introduction/Governance/Atomic Design) and overall [design team practices](Introduction/Getting Started/For Designers).  
+- **Engineers (Review):** Validate technical feasibility.
+- **Product:** Validate final design against requirements and create ticket(s) capturing all requirements necessary for development.  
 
 ### **Activities**  
 
 - Design component variants/states in Figma.  
 - Apply existing design tokens (color, spacing, typography).  
 - Document interaction states (hover, focus, loading).  
-
-### **Outputs**  
-
-- Figma file with component specs, tokens, and responsive breakpoints.  
-
-### **Key Considerations**  
-
-- Designers must use **existing tokens** unless a net-new token is justified.  
-- Engineers review for feasibility (e.g., “Can Tailwind implement this animation?”).  
-
----
-
-## 3. Approval Phase  
-
-*Cross-functional review to ensure alignment and readiness.*  
-
-### **Stakeholders**  
-
-- **Design:** Finalize aesthetics and token usage.  
-- **Engineering:** Confirm technical viability.  
-- **Product:** Validate final design against requirements and create ticket(s) capturing all requirements necessary for development.  
-
-### **Activities**  
-
 - Review designs and engineering plans for final stakeholder approval and sign-off.
 
 ### **Outputs**  
 
+- Figma file with component specs, tokens, and responsive breakpoints.  
 - Signed-off Figma design.  
 - Jira ticket for implementation.  
+- React component code (along with appropriate test coverage).  
+- Storybook documentation with usage examples, ideally in different states of stress.  
 
 ### **Key Considerations**  
 
-- Reject designs that ignore system standards without justification.  
-
+- Designers must use **existing tokens** unless a net-new token is justified.  
+- Engineers review for feasibility (e.g., "Can Tailwind implement this animation?").  
+- All teams should reject designs that ignore system standards without justification.  
+- Engineers and designers collaborate to resolve discrepancies (e.g., "Figma uses `spacing-4`, but Tailwind uses `p-4`").  
 ---
 
 ## 4. Build Phase  
@@ -144,12 +126,9 @@ We track planned work for components in the Design System Board on JIRA.
 
 ### **Outputs**  
 
-- React component code.  
-- Storybook documentation with usage examples.  
 
 ### **Key Considerations**  
 
-- Engineers and designers collaborate to resolve discrepancies (e.g., “Figma uses `spacing-4`, but Tailwind uses `p-4`”).  
 
 ---
 
@@ -167,7 +146,7 @@ We track planned work for components in the Design System Board on JIRA.
 
 When the component is built, testing will ensue across the following areas:
 
-- **Documentation** - do Storybook docs exist: props, examples, and “do's/don'ts”.  
+- **Documentation** - do Storybook docs exist: props, examples, and "do's/don'ts".  
 - **Content** – can this component or variation handle a variety of content situations (such as lengthy or internationalized text)?
 - **Accessibility** – does this component meet or exceed accessibility requirements and follow accessibility guidelines?
 - **Cross-browser/device** – test across supported browsers and devices
@@ -190,17 +169,20 @@ When the component is built, testing will ensue across the following areas:
 
 ## 6. Release Phase  
 
-*Release to production and monitor.*  
+*Release to production, gather feedback and iterate.*  
 
 ### **Stakeholders**  
 
 - **DevOps:** Manage CI/CD pipeline.  
 - **PMs/Designers:** Announce availability to product teams.  
+- **All Teams:** Report issues or enhancement requests.  
 
 ### **Activities**  
 
-- Merge to main branch.  
-- Update design system version and changelog.  
+- Merge to `main` branch.  
+- Update design system version and changelog.
+- Track adoption metrics.  
+- Schedule retrospectives for complex components.
 
 ### **Outputs**  
 
@@ -211,18 +193,3 @@ When the component is built, testing will ensue across the following areas:
 ### **Key Considerations**  
 
 - Monitor usage and errors (e.g., via Datadog?, Vercel?).  
-
----
-
-## 7. Post-Launch Review  
-
-*Gather feedback and iterate.*  
-
-### **Stakeholders**  
-
-- **All Teams:** Report issues or enhancement requests.  
-
-### **Activities**  
-
-- Track adoption metrics.  
-- Schedule retrospectives for complex components.

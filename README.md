@@ -38,3 +38,6 @@ Pretty great: <https://gamut.codecademy.com/?path=/docs/foundations-colormode--d
 contributing: <https://govuk-react.github.io/govuk-react/?path=/docs/docs-contributing--docs> <https://github.com/govuk-react/govuk-react>
 
 STATUS JSON: <https://github.com/Talend/ui/blob/master/packages/design-docs/src/status.json>
+
+Tailwind component output w/ search
+  <https://gitlab-org.gitlab.io/gitlab-ui/?path=/story/tokens-all--default>

@@ -17,7 +17,6 @@ Under the hood, our the code behind our Design System is primarily powered by Re
 - **[Radix UI](https://www.radix-ui.com/):** We build on Radix UI's low-level components that prioritize accessibility, customization, and a great developer experience.
 - **[Storybook JS](https://storybook.js.org/):** Documenting, sharing and distributing the components.
 - **[Style Dictionary](https://amzn.github.io/style-dictionary/):** This tool imports design tokens from our main Figma Design System, ensuring consistency between design and implementation.
-- **[Vite](https://vitejs.dev/):** - Frontend Tooling: Dev Server & JS Compilation
 
 ## Code Conventions
 
@@ -84,7 +83,6 @@ You can also simply ask on Slack, channel #ask-designsystem.
 ├── Component.spec.tsx     # Cypress tests
 ├── Component.stories.mdx  # Documentation and call to `<Story>`
 ├── Component.stories.tsx  # Actual stories written explicitely in TSX
-├── Component.module.scss  # Component styles (in BEM)
 ├── index.ts               # Clean component export
 └── primitive              # Internal composition elements
     ├── ComponentBrick.A.tsx
@@ -94,11 +92,10 @@ You can also simply ask on Slack, channel #ask-designsystem.
     └── ComponentVariantB.tsx
 ```
 
-- Use design tokens with a burning passion.
+- Use Tailwind + `clsx` with a burning passion.
 - Explicitness > Implicitness, always and in all things.
 - Don't let consumers easily override the styles or behaviours of the component.
-- Let designers review your work (don't merge and release without a designer's OK). Use the Slack channels `#ask-ux` or `ask-designsystem`.
-- Let developers outside your team review your work.
+- Let designers review your work (don't merge and release without a designer's OK).
 
 ### Contributing in the design phase
 

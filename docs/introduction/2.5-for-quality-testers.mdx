@@ -1,12 +1,16 @@
-import { Meta } from '../../.storybook/components';
+import { Meta, Intro } from '../../.storybook/components';
 
 <Meta title="Introduction/Getting Started/For Testers" />
 
 # For Testers
 
+<Intro>
+The design system component library is built in React and we use [Vitest](https://vitest.dev/) and [@testing-library/react](https://github.com/testing-library/react-testing-library) to unit test the business logic and accessibility of our components.
+</Intro>
+
 ## Unit tests
 
-We use [Vitest](https://vitest.dev/) and [@testing-library/react](https://github.com/testing-library/react-testing-library) to unit test the business logic and accessibility of our components. To start unit tests in watch mode, run:
+To start unit tests in watch mode, run:
 
 ```bash
 npm run test
@@ -20,7 +24,7 @@ Chromatic builds the Storybook on every commit, takes a snapshot of each story a
 
 ## Linting
 
-As for linting and formatting, you can configure your editor to automatically lint and format your code on save. For this purpose, we're using [Prettier](https://prettier.io/) and [ESLint](https://eslint.org/) as part of SumUp's frontend toolkit, [Foundry](https://github.com/sumup-oss/foundry). If you need to do it manually, you can run:
+As for linting and formatting, you can configure your editor to automatically lint and format your code on save. For this purpose, we're using [Prettier](https://prettier.io/) and [ESLint](https://eslint.org/). If you need to do it manually, you can run:
 
 ```bash
 npm run lint
