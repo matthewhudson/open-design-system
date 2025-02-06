@@ -22,19 +22,40 @@ Under the hood, our the code behind our Design System is primarily powered by Re
 
 When developing components in the design system, we have a few development principles you should keep in mind. They will help you with picking good names, design clear & understandable APIs, and keep things consistent.
 
+## Component Directory Structure
+
+Follow the basic structure of a component/layout folder in the repository and use the [provided template for doc pages](DOCTEMPLATE.md).
+
+```text
+├── Component.tsx          # Component
+├── Component.spec.tsx     # Cypress tests
+├── Component.stories.mdx  # Documentation and call to `<Story>`
+├── Component.stories.tsx  # Actual stories written explicitely in TSX
+├── index.ts               # Clean component export
+└── primitive              # Internal composition elements
+    ├── ComponentBrick.A.tsx
+    └── ComponentBrick.B.tsx
+└── variants               # Standalone variants of the components
+    ├── ComponentVariantA.tsx
+    └── ComponentVariantB.tsx
+```
+
 ## Best Practices
 
 **Every component must be thoroughly tested.** If the component is purely representative (e.g. simple, styled components), a snapshot test is sufficient. If the component is interactive, you should do your best to test the interaction on a unit level.
 
-**Ensure accessibility and autocompletion.** Every component should have a minimum of an accessibility test asserted with `jest-axe`. You should manually check mouse, touch, and keyboard accessibility as well as good screen reader support. You should also make a special effort to properly enable autocompletion for relevant fields, using the proper input names and autocomplete properties.
+**Documentation is part of your component.** Be sure to write meaningful documentation about best practices / usage guidelines when creating or updating existing components. You can use existing documentation for reference. The component should be documented in Storybook and any variants should have stories.
 
-**All translated text should be provided as props with English defaults.** It must be possible for all user-facing text inside a component to be replaced with translated versions. This also makes it easier to stick to content guidelines by providing a good starting example.
-
-**Documentation is part of your component.** Be sure to write meaningful documentation about best practices / usage guidelines when creating or updating existing components. You can use existing documentation for reference.
-
-## Component Design Principles
+**Ensure accessibility and autocompletion.** Every component should adhere to accessiblity standards. You should manually check mouse, touch, and keyboard accessibility as well as good screen reader support. You should also make a special effort to properly enable autocompletion for relevant fields, using the proper input names and autocomplete properties.
 
 **Keep the API small.** As much as possible, avoid exposing too many options for configuring a component. The exception is if you are wrapping an existing third-party library, you may have a good reason to simply pass along all additional props to ensure API compatibility with that third-party library.
+
+**Additionally, it's typically wise to:**
+
+- Use Tailwind + `clsx`/`class-variance-authority` with a burning passion to maintain clean component styling interfaces.
+- Explicitness > Implicitness, always and in all things.
+- Don't let consumers easily override the styles or behaviours of the component.
+- Let designers review your work (don't merge and release without a designer's OK).
 
 ## Naming Principles
 
@@ -57,45 +78,17 @@ If at all possible, stick to standard names you'd find in the DOM or React APIs 
 
 ## Contributing
 
-Congratulations on becoming a contributor to the design system! You are pushing the whole company upwards.
-
 Here's what we expect our contributors to do when it comes to code.
 
 We don't believe in giving you rigid steps to follow, we prefer guidance and a loose checklist. Always put people before processes.
 
 ### How do I know what I can do?
 
-We have a [self-service Jira board set-up for this](#todo). All the tasks in the TODO column are up for grabs!
+We have a [self-service Jira board set-up for this](/#todo). All the tasks in the TODO column are up for grabs!
 
 Assign yourself to a ticket, it's all fair game.
 
-You can also simply ask on Slack, channel #ask-designsystem.
-
-### TL;WR
-
-- Contribute to the design phase by offering browser-based know-how.
-- You may need to create the initial Storybook PR and help contributing designers write down specs (use the [provided template for the ComponentName.stories.mdx pages](DOCTEMPLATE.md)).
-- Get peer reviews on the [API of your component](#Designing-the-component's-API) before moving on to the implementation.
-- Follow the basic structure of a component/layout folder in the repository and use the [provided template for doc pages](DOCTEMPLATE.md).
-
-```
-├── Component.tsx          # Component
-├── Component.spec.tsx     # Cypress tests
-├── Component.stories.mdx  # Documentation and call to `<Story>`
-├── Component.stories.tsx  # Actual stories written explicitely in TSX
-├── index.ts               # Clean component export
-└── primitive              # Internal composition elements
-    ├── ComponentBrick.A.tsx
-    └── ComponentBrick.B.tsx
-└── variants               # Standalone variants of the components
-    ├── ComponentVariantA.tsx
-    └── ComponentVariantB.tsx
-```
-
-- Use Tailwind + `clsx` with a burning passion.
-- Explicitness > Implicitness, always and in all things.
-- Don't let consumers easily override the styles or behaviours of the component.
-- Let designers review your work (don't merge and release without a designer's OK).
+You can also simply ask on Slack, channel `#ask-designsystem`.
 
 ### Contributing in the design phase
 
@@ -137,16 +130,16 @@ It can be something like that:
 
 ```tsx
 type Data = {
-	name: string;
-	values: number[];
-	color: string;
+ name: string;
+ values: number[];
+ color: string;
 };
 
 type DataSet = Data[];
 
 type ComponentProps = {
-	isActive: boolean;
-	dataset: DataSet;
+ isActive: boolean;
+ dataset: DataSet;
 }
 
 export function Component(props: ComponentProps) {...}
@@ -157,8 +150,8 @@ import { Component} from '@open-design-system/components'
 import { tokens } from '@open-design-system/tokens'
 
 <Component
-	isActive
-	dataset=[{ name: "pouet", values: [1,4,8], color: tokens.coralColorChartPositive }]
+ isActive
+ dataset=[{ name: "pouet", values: [1,4,8], color: tokens.coralColorChartPositive }]
 />
 ```
 
